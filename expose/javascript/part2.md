@@ -36,21 +36,28 @@
 
 13. For each of the following questions, note down the output as well as a brief explanation why that output was given Arithmetic
     1.  ‘3’ + 2='32': 2 map to its exact string representation, which is '2'
-    2.  ‘3’ - 2=1 : 
-    3.  3 + null
-    4.  ‘3’ + null
-    5.  true + 3
-    6.  false + null
-    7.  '3' + undefined
-    8.  '3' - undefined
+    2.  ‘3’ - 2=1 : '3' is converted into the number 3, as the string type can't perform subtraction
+    3.  3 + null=3 : null is converted into 0, 3+0=3
+    4.  ‘3’ + null = '3null' : null is converted into 'null'
+    5.  true + 3 = 4 : the boolean value true is converted into the number 1. 1+3=4;
+    6.  false + null = 0 : false is converted into 0, null is converted into 0; 0+0=0
+    7.  '3' + undefined = '3undefined' : undefined becomes 'undefined'. There is a string conversion here. 
+    8.  '3' - undefined = NaN : undefined becomes NaN in numeric conversion
 14. Comparison
-    1.  ‘2’ > 1
-    2.  ‘2’ < ‘12’
-    3.  2 == ‘2’
-    4.  2 === ‘2’
-    5.  true == 2
-    6.  true === Boolean(2)
+    1.  ‘2’ > 1 = true : string '2' becomes a number 2
+    2.  ‘2’ < ‘12’ =  false : string comparison, '2' starts with '2', '12' starts with '1'
+    3.  2 == ‘2’ = true : '2' becomes a number 2; 2 equals 2
+    4.  2 === ‘2’ = false : because === checks without type conversion; 2 and '2' have different types
+    5.  true == 2 = false : true becomes 1; 1 != 2
+    6.  true === Boolean(2) = true : 2 becomes the blooean value true; true === true
 15. Explain the difference between the == and === operators.
+    1.  == checks the equality of the both side with type conversion, while === checks without type converison.
 16. Given the above Object, write a for...in loop that will iterate through it and print out the value of the property if the property starts with the letter r, or if the value of that property is an odd number.  (This should be in a JS file part2-question16.js)
+    1.  in "part2-question16.js"
 17. If the function above is called with the following parameters modifyArray([1,2,3], doSomething), what will be the result? Briefly walk through how you arrived at that result. (This should be in your part2.md). Here we are passing in a function as a parameter, however we can also return a function from another function just as easily, you're encouraged to play around with callbacks as they are used heavilyThe above program only prints out the time once when executed. Modify this code such that the program prints out the time every second.  (This should be a JS file - part2-question18.js)
-18. 
+    1.  The result is [ 2, 4, 6 ]. A new array is declared and initialized as the modifyArray function starts to execute. In each iteration of the for loop, every element in the array variable is doubled and pushed into the new array. After the for loop ends, the new array is returned. 
+18. The above program only prints out the time once when executed. Modify this code such that the program prints out the time every second.  (This should be a JS file - part2-question18.js)
+    1.  in part2-question18.js
+19. What is the output of the above code? (This should be in your part2.md)
+    1.  1 4 3 2
+

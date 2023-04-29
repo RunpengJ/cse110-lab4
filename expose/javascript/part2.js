@@ -33,6 +33,5 @@ let student = {
 
 console.log(student.courseLoad[0]);
 
-console.log(typeof('3'+2));
 
-console.log('3'+2);
+alert('2'>1);
